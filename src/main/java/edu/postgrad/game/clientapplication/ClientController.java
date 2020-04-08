@@ -15,11 +15,6 @@ public class ClientController {
     @Autowired
     TeamsFeignClient teamsFeignClient;
 
-    @GetMapping("client-application/test")
-    public ResponseEntity<String> testMethod(){
-       return new ResponseEntity<>("Raman", HttpStatus.OK);
-    }
-
    @GetMapping("client-application/players")
     public List<Player> getAllPlayersFromTeamService(){
         return teamsFeignClient.getAllPlayers();
